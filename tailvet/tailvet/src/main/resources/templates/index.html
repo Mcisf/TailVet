@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Veterinaria</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>TAILVET</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#about">Acerca de</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <button class="login-btn" onclick="window.location.href='/tipo-usuario'">Iniciar Sesion</button>
+</header>
+
+  <section id="hero">
+    <div class="hero-text">
+      <h1>Bienvenidos a la Clínica Veterinaria Tailvet</h1>
+      <h2>Nuestro equipo de veterinarios y profesionales está comprometido con el bienestar y la salud de tus compañeros peludos.</h2>
+      <p>En la Clínica Veterinaria Tailvet, nos dedicamos a proporcionar el mejor cuidado para tus mascotas. Ofrecemos una amplia gama de servicios, desde consultas generales y hospitalización hasta tratamientos especializados. Ven y descubre cómo podemos ayudar a mantener a tus mascotas felices y saludables. ¡Bienvenidos a Tailvet, donde el cuidado de tus mascotas es nuestra pasión!</p>
+      <a href="#contact" class="btn">Contáctanos</a>
+    </div>
+    <img src="images/logo.png" alt="Imagen de bienvenida">
+  </section>
+
+  <section id="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="service1">
+          <img src="images/consulta.webp" alt="Consulta General" class="left-image">
+          <div class="carousel-text">
+            <img src="images/vacuna.png" alt="Icono Consulta General" class="service-icon">
+            <h3>Consulta General</h3>
+            <p>Ofrecemos consultas generales para el cuidado de tus mascotas. Nuestro equipo de veterinarios está altamente capacitado para realizar diagnósticos precisos y proporcionar el tratamiento adecuado para cualquier problema de salud que pueda tener tu mascota. Nos aseguramos de que cada consulta sea detallada y completa, para que tu mascota reciba la mejor atención posible.</p>
+          </div>
+        </div>
+        <div class="carousel-item" id="service2">
+          <img src="images/Hospitalización.jpg" alt="Hospitalización" class="left-image">
+          <div class="carousel-text">
+            <img src="images/gatoherido.png" alt="Icono Hospitalización" class="service-icon">
+            <h3>Hospitalización</h3>
+            <p>Proporcionamos hospitalización y cuidados intensivos para mascotas que requieren un seguimiento más cercano. Nuestro hospital está equipado con tecnología avanzada para monitorear la salud de tus animales las 24 horas del día. Nuestro personal está altamente entrenado para ofrecer cuidados de calidad y asegurar el bienestar de tus mascotas durante su estancia con nosotros.</p>
+          </div>
+        </div>
+        <div class="carousel-item" id="service3">
+          <img src="images/Especializados.webp" alt="Tratamientos Especializados" class="left-image">
+          <div class="carousel-text">
+            <img src="images/cono.png" alt="Icono Tratamientos Especializados" class="service-icon">
+            <h3>Tratamientos Especializados</h3>
+            <p>Ofrecemos una variedad de tratamientos especializados para tratar diversas enfermedades y condiciones de salud. Desde procedimientos quirúrgicos hasta terapias alternativas, contamos con un equipo de especialistas que trabajará para proporcionar a tu mascota el tratamiento más adecuado. Nos comprometemos a mantenerte informado y a trabajar en estrecha colaboración contigo para lograr los mejores resultados para tu mascota.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <span class="dot active" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+        <span class="dot" onclick="showSlide(3)"></span>
+      </div>
+    </div>
+  </section>
+  
+<section id="about">
+  <h2>Acerca de Nosotros</h2>
+  <p>En Tailvet, nos dedicamos al cuidado integral de tus mascotas. Nuestro equipo de veterinarios y especialistas está comprometido con el bienestar de tus animales. Ofrecemos una amplia gama de servicios, desde consultas generales y hospitalización hasta tratamientos especializados. Ven y descubre cómo podemos ayudar a mantener a tus mascotas felices y saludables. ¡Bienvenidos a Tailvet, donde el cuidado de tus mascotas es nuestra pasión!</p>
+
+  <div class="about-content">
+    <div class="mission-vision">
+      <div class="mission">
+        <h3>Misión</h3>
+        <p>Proporcionar atención veterinaria de alta calidad, enfocándonos en el bienestar y la salud de las mascotas, garantizando un trato amable y profesional.</p>
+      </div>
+      <div class="vision">
+        <h3>Visión</h3>
+        <p>Ser reconocidos como líderes en el cuidado veterinario, ofreciendo soluciones innovadoras y comprometidas con la salud integral de las mascotas.</p>
+      </div>
+    </div>
+
+    <div class="objectives-values">
+      <div class="objectives">
+        <h3>Objetivos</h3>
+        <ol>
+          <li>
+            <span class="icon"><img src="images/altacalidad.png" alt="Icono Objetivo 1"></span>
+            Ofrecer servicios veterinarios de alta calidad.
+          </li>
+          <li>
+            <span class="icon"><img src="images/tratamientoicon.png" alt="Icono Objetivo 2"></span>
+            Innovar en tratamientos y técnicas para la salud de las mascotas.
+          </li>
+          <li>
+            <span class="icon"><img src="images/red.png" alt="Icono Objetivo 3"></span>
+            Mantener un ambiente cálido y profesional para nuestros clientes y sus mascotas.
+          </li>
+        </ol>
+      </div>
+      <div class="values">
+        <h3>Valores</h3>
+        <ol>
+          <li>
+            <span class="icon"><img src="images/compromiso.png" alt="Icono Valor 1"></span>
+            Compromiso con la excelencia.
+          </li>
+          <li>
+            <span class="icon"><img src="images/empatia.png" alt="Icono Valor 2"></span>
+            Empatía y respeto hacia las mascotas y sus dueños.
+          </li>
+          <li>
+            <span class="icon"><img src="images/integridad.png" alt="Icono Valor 3"></span>
+            Integridad y transparencia en todos nuestros servicios.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  
+  
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <p>Si tienes alguna pregunta o deseas agendar una cita, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
+        <ul>
+          <li>
+            <img src="images/ubicacion.png" alt="Ubicación" class="contact-icon"> Colombia, Bogotá
+          </li>
+          <li>
+            <img src="images/telefono.png" alt="Teléfono" class="contact-icon"> 1234213231
+          </li>
+          <li>
+            <img src="images/correo.png" alt="Correo" class="contact-icon"> tailvet@veterinaria.com
+          </li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <input type="text" id="name" placeholder=" " required>
+            <label for="name">Nombre</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required>
+            <label for="email">Correo Electrónico</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder=" " required></textarea>
+            <label for="message">Mensaje</label>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <footer>
+    <p>&copy; 2024 Clínica Veterinaria Tailvet. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

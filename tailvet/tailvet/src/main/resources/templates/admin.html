@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Lista de Usuarios, Mascotas, Veterinarios y Tratamientos</title>
+    <link rel="stylesheet" href="/css/admin-styles.css">
+    <style>
+        .hidden { display: none; }
+        .btn-toggle { margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <a href="/logout">Cerrar sesión</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div>
+                <button class="btn-toggle" onclick="showSection('usuarios')">Mostrar Usuarios</button>
+                <button class="btn-toggle" onclick="showSection('mascotas')">Mostrar Mascotas</button>
+                <button class="btn-toggle" onclick="showSection('veterinarios')">Mostrar Veterinarios</button>
+                <button class="btn-toggle" onclick="showSection('tratamientos')">Mostrar Tratamientos</button>
+            </div>
+
+            <!-- Sección Usuarios -->
+            <section id="usuarios-section" class="hidden">
+                <h2>Lista de Usuarios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Cedula</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="usuario : ${usuarios}">
+                            <td th:text="${usuario.id}">1</td>
+                            <td th:text="${usuario.nombre}">Nombre del Usuario</td>
+                            <td th:text="${usuario.email}">Email del Usuario</td>
+                            <td th:text="${usuario.direccion}">Dirección del Usuario</td>
+                            <td th:text="${usuario.telefono}">Teléfono del Usuario</td>
+                            <td th:text="${usuario.cedula}">Cedula del Usuario</td>
+                            <td>
+                                <a th:href="@{usuarios/editar/{id}(id=${usuario.id})}" class="btn-details">Ver detalles</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección Mascotas -->
+            <section id="mascotas-section" class="hidden">
+                <h2>Lista de Mascotas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Raza</th>
+                            <th>Edad</th>
+                            <th>Peso</th>
+                            <th>Imagen</th>
+                            <th>Enfermedad</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="mascota : ${mascotas}">
+                            <td th:text="${mascota.id}"></td>
+                            <td th:text="${mascota.nombre}"></td>
+                            <td th:text="${mascota.raza}"></td>
+                            <td th:text="${mascota.edad}"></td>
+                            <td th:text="${mascota.peso}"></td>
+                            <td>
+                                <img th:src="@{${mascota.imagen}}" alt="Imagen de la Mascota" style="max-width: 100px; height: auto;"/>
+                            </td>
+                            <td th:text="${mascota.enfermedad}"></td>
+                            <td th:text="${mascota.estado}"></td>
+                            <td>
+                                <a href="#" th:href="@{/mascota/{id}/detalles(id=${mascota.id})}" class="btn-details">Ver Detalles</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección Veterinarios -->
+            <section id="veterinarios-section" class="hidden">
+                <h2>Lista de Veterinarios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Especialidad</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="veterinario : ${veterinarios}">
+                            <td th:text="${veterinario.id}"></td>
+                            <td th:text="${veterinario.nombre}"></td>
+                            <td th:text="${veterinario.email}"></td>
+                            <td th:text="${veterinario.telefono}"></td>
+                            <td th:text="${veterinario.especialidad}"></td>
+                            <td>
+                                <a th:href="@{veterinarios/editar/{id}(id=${veterinario.id})}" class="btn-details">Ver detalles</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección Tratamientos -->
+            <section id="tratamientos-section" class="hidden">
+                <h2>Lista de Tratamientos</h2>
+                <table>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Mascota</th>
+                                <th>Veterinario</th>
+                                <th>Droga Suministrada</th>
+                                <th>Cantidad Usada</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tratamiento : ${tratamientos}">
+                                <td th:text="${tratamiento.fecha}"></td>
+                                <td th:text="${tratamiento.mascota.nombre}"></td>
+                                <td th:text="${tratamiento.veterinario.nombre}"></td>
+                                <td th:text="${tratamiento.droga.nombre}"></td>
+                                <td th:text="${tratamiento.cantidadUsada}"></td>
+                                <td th:text="${tratamiento.observaciones}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('usuarios-section').classList.add('hidden');
+            document.getElementById('mascotas-section').classList.add('hidden');
+            document.getElementById('veterinarios-section').classList.add('hidden');
+            document.getElementById('tratamientos-section').classList.add('hidden');
+            document.getElementById(sectionId + '-section').classList.remove('hidden');
+        }
+
+        // Muestra la sección de usuarios por defecto
+        showSection('usuarios');
+    </script>
+</body>
+</html>

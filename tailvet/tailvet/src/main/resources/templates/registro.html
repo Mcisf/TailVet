@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/register-styles.css}">
+    <title>Registro | TailVet</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <!-- Formulario de Registro -->
+        <div class="form-container sign-up">
+            <form id="signUpForm" th:action="@{/login}" method="POST">
+                <h1>Crear Cuenta</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Usa tu correo para registrarte</span>
+                <input type="text" name="nombre" placeholder="Nombre de Usuario" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+
+                <!-- Agregar campos para registrar mascotas -->
+                <h2>Datos de la Mascota</h2>
+                <input type="text" name="mascotaNombre" placeholder="Nombre de la Mascota" required>
+                <input type="text" name="mascotaRaza" placeholder="Raza" required>
+                <input type="number" name="mascotaEdad" placeholder="Edad" min="0" required>
+                <input type="number" name="mascotaPeso" placeholder="Peso" min="0" step="0.1" required>
+                <input type="text" name="mascotaImagen" placeholder="URL de la Imagen" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- Contenedor para los botones de cambio de formulario -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>¡Bienvenido de nuevo!</h1>
+                    <p>Ingresa tus datos personales para acceder a todas las funciones del sitio</p>
+                    <!-- Botón para mostrar el formulario de inicio de sesión -->
+                    <button id="showLogin" th:onclick="|window.location='@{/login}'|">Iniciar Sesión</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <!-- Aquí va el contenido del formulario de inicio de sesión -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/js/register-script.js}"></script>
+</body>
+
+</html>

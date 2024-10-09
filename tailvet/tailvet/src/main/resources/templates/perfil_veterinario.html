@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Veterinario</title>
+    <link rel="stylesheet" href="/css/veterinario.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Perfil del Veterinario</h1>
+            <nav>
+                <a href="/logout">Cerrar sesión</a>
+            </nav>
+            <div class="veterinario-info">
+                <img src="/images/veterinariooo.png" alt="Veterinario" class="veterinario-foto">
+                <div class="veterinario-detalles">
+                    <h2 th:text="${veterinario.nombre}">Nombre del Veterinario</h2>
+                    <p>Especialidad: <span th:text="${veterinario.especialidad}">Cardiología</span></p>
+                    <p>Teléfono: <span th:text="${veterinario.telefono}">+1234567890</span></p>
+                    <p>Email: <span th:text="${veterinario.email}">veterinario@example.com</span></p>
+                </div>
+            </div>
+            <!-- Botón para registrar una nueva mascota -->
+            <div class="registrar-mascota">
+                <a href="/registro-mascota" class="btn-registrar-mascota">Registrar Nueva Mascota</a>
+            </div>
+        </header>
+
+        <section class="mascotas-a-cargo">
+            <h2>Mascotas a Cargo</h2>
+            <table class="mascotas-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Edad</th>
+                        <th>Estado</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="mascota : ${veterinario.mascotas}">
+                        <td th:text="${mascota.nombre}">Luna</td>
+                        <td th:text="${mascota.raza}">Golden Retriever</td>
+                        <td th:text="${mascota.edad}">4 años</td>
+                        <td th:text="${mascota.estado}">a</td>
+
+                        <td><a th:href="@{/mascota/{id}/detalles(id=${mascota.id})}" class="detalle-link">Ver Detalles</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

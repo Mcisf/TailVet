@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Tratamientos</title>
+    <link rel="stylesheet" href="/css/tratamientos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tratamientos</h1>
+        <table class="tratamientos-table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Mascota</th>
+                    <th>Veterinario</th>
+                    <th>Droga Suministrada</th>
+                    <th>Cantidad Usada</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tratamiento : ${tratamientos}">
+                    <td th:text="${tratamiento.fecha}"></td>
+                    <td th:text="${tratamiento.mascota.nombre}"></td>
+                    <td th:text="${tratamiento.veterinario.nombre}"></td>
+                    <td th:text="${tratamiento.droga.nombre}"></td>
+                    <td th:text="${tratamiento.cantidadUsada}"></td>
+                    <td th:text="${tratamiento.observaciones}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

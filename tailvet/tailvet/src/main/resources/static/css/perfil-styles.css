@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #00796b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+h2 {
+    color: #333333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00796b;
+    padding-bottom: 10px;
+}
+
+.user-info {
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.user-info p {
+    font-size: 1.1em;
+    margin: 0;
+    color: #555;
+}
+
+.user-info strong {
+    color: #00796b;
+}
+
+.pets-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pets-section th, .pets-section td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.pets-section th {
+    background-color: #00796b;
+    color: white;
+    font-weight: bold;
+}
+
+.pets-section td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.pet-image {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pets-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

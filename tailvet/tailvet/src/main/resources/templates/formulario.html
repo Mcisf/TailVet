@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Tratamiento</title>
+</head>
+<body>
+    <h1>Nuevo Tratamiento</h1>
+    <form th:action="@{/tratamientos/guardar}" th:object="${tratamiento}" method="post">
+        <label for="fecha">Fecha:</label>
+        <input type="date" th:field="*{fecha}" />
+
+        <label for="mascota">Mascota:</label>
+        <select th:field="*{mascota}">
+            <option th:each="mascota : ${mascotas}" th:value="${mascota}" th:text="${mascota.nombre}"></option>
+        </select>
+
+        <label for="veterinario">Veterinario:</label>
+        <select th:field="*{veterinario}">
+            <option th:each="veterinario : ${veterinarios}" th:value="${veterinario}" th:text="${veterinario.nombre}"></option>
+        </select>
+
+        <label for="droga">Droga Suministrada:</label>
+        <select th:field="*{droga}">
+            <option th:each="droga : ${drogas}" th:value="${droga}" th:text="${droga.nombre}"></option>
+        </select>
+
+        <label for="cantidadUsada">Cantidad Usada:</label>
+        <input type="number" th:field="*{cantidadUsada}" />
+
+        <label for="observaciones">Observaciones:</label>
+        <textarea th:field="*{observaciones}"></textarea>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

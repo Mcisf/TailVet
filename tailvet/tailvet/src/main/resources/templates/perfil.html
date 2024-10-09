@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="/css/perfil-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Perfil del Usuario</h1>
+        <nav>
+            <a href="/logout">Cerrar sesión</a>
+        </nav>
+    </header>
+    <main>
+        <section class="user-info">
+            <h2>Datos del Usuario</h2>
+            <div class="info-grid">
+                <p><strong>Nombre:</strong> <span th:text="${usuario.nombre}">Nombre del Usuario</span></p>
+                <p><strong>Correo Electrónico:</strong> <span th:text="${usuario.email}">Correo del Usuario</span></p>
+                <p><strong>Dirección:</strong> <span th:text="${usuario.direccion}">Dirección del Usuario</span></p>
+                <p><strong>Teléfono:</strong> <span th:text="${usuario.telefono}">Teléfono del Usuario</span></p>
+                <p><strong>Cédula:</strong> <span th:text="${usuario.cedula}">Cédula del Usuario</span></p>
+            </div>
+        </section>
+        <section class="pets-section">
+            <h2>Mis Mascotas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Edad</th>
+                        <th>Peso</th>
+                        <th>Imagen</th>
+                        <th>Enfermedad</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="mascota : ${mascotas}">
+                        <td th:text="${mascota.nombre}">Nombre de la Mascota</td>
+                        <td th:text="${mascota.raza}">Raza de la Mascota</td>
+                        <td th:text="${mascota.edad}">Edad de la Mascota</td>
+                        <td th:text="${mascota.peso}">Peso de la Mascota</td>
+                        <td>
+                            <img th:src="@{${mascota.imagen}}" alt="Imagen de la Mascota" class="pet-image"/>
+                        </td>
+                        <td th:text="${mascota.enfermedad}">Enfermedad de la Mascota</td>
+                        <td th:text="${mascota.estado}">Estado de la Mascota</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

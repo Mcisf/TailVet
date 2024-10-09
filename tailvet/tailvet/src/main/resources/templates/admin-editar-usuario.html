@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="/css/admin-usuario-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Usuario</h1>
+        <a href="/admin">Volver al panel</a>
+        <form th:action="@{/usuarios/actualizar/{id}(id=${usuario.id})}" method="post">
+            <input type="text" name="nombre" th:value="${usuario.nombre}" placeholder="Nombre"/>
+            <input type="email" name="email" th:value="${usuario.email}" placeholder="Email"/>
+            <input type="password" name="password" th:value="${usuario.password}" placeholder="Contraseña"/>
+            <input type="text" name="direccion" th:value="${usuario.direccion}" placeholder="Dirección"/>
+            <input type="text" name="telefono" th:value="${usuario.telefono}" placeholder="Teléfono"/>
+            <input type="text" name="cedula" th:value="${usuario.cedula}" placeholder="Cédula"/>
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+</body>
+</html>
